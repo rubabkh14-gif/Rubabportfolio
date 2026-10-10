@@ -1,0 +1,1869 @@
+<! html>
+<htmDOCTYPEl lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rubab | Creative Web Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #090909;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background glow */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(180, 120, 60, 0.12);
+            border-radius: 50%;
+            filter: blur(100px);
+            top: -150px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: rgba(120, 70, 30, 0.10);
+            border-radius: 50%;
+            filter: blur(100px);
+            bottom: -150px;
+            left: -100px;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(9, 9, 9, 0.65);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #c88a52;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #c88a52;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .small-text {
+            color: #c88a52;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #c88a52;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 15px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #c88a52;
+            color: #111;
+            font-weight: bold;
+        }
+
+        .primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(200,138,82,0.25);
+        }
+
+        .secondary {
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #c88a52;
+            color: #c88a52;
+            transform: translateY(-4px);
+        }
+
+        /* Scroll indicator */
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 3px;
+            animation: floating 2s infinite ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 10px);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+       
+        }
+      /* ABOUT SECTION */
+
+.about {
+    min-height: 100vh;
+    padding: 140px 8%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.section-title span {
+    color: #c88a52;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1.05;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.section-title h2 strong {
+    color: #c88a52;
+    font-weight: 500;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 90px;
+}
+
+.about-text p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    max-width: 550px;
+}
+
+.about-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #c88a52;
+    text-decoration: none;
+    border-bottom: 1px solid #c88a52;
+    padding-bottom: 6px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.skill > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 5px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: #c88a52;
+    border-radius: 10px;
+    animation: skillAnimation 1.5s ease;
+}
+
+.html {
+    width: 90%;
+}
+
+.css {
+    width: 85%;
+}
+
+.javascript {
+    width: 75%;
+}
+
+.responsive {
+    width: 85%;
+}
+
+@keyframes skillAnimation {
+    from {
+        width: 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .about {
+        padding: 100px 20px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 60px;
+    }
+} /* PROJECTS SECTION */
+
+.projects {
+    min-height: 100vh;
+    padding: 140px 8%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-top: 90px;
+}
+
+.project-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(200,138,82,0.5);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+}
+
+.project-image {
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Coffee project visual */
+.coffee-project {
+    background:
+        radial-gradient(circle at 50% 40%, #9b693e 0%, transparent 20%),
+        radial-gradient(circle at 30% 70%, #50321e 0%, transparent 35%),
+        linear-gradient(135deg, #1c130e, #080808);
+}
+
+/* Portfolio project visual */
+.portfolio-project {
+    background:
+        radial-gradient(circle at 70% 30%, #6b4930 0%, transparent 25%),
+        radial-gradient(circle at 20% 80%, #342317 0%, transparent 30%),
+        linear-gradient(135deg, #17110d, #070707);
+}
+
+.project-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,10,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-button {
+    text-decoration: none;
+    color: #111;
+    background: #c88a52;
+    padding: 14px 25px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.project-card:hover .project-button {
+    transform: translateY(0);
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-category {
+    color: #c88a52;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.project-info p {
+    color: #888;
+    line-height: 1.7;
+    margin-top: 18px;
+    max-width: 500px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.project-tech span {
+    font-size: 11px;
+    padding: 8px 13px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    color: #aaa;
+}
+
+@media (max-width: 800px) {
+
+    .projects {
+        padding: 100px 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    .project-image {
+        height: 300px;
+    }
+} 
+/* SERVICES */
+
+.services {
+    padding: 140px 8%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 90px;
+}
+
+.service-card {
+    min-height: 330px;
+    padding: 35px;
+    position: relative;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    transition: 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(200,138,82,0.5);
+    background: #15110e;
+}
+
+.service-number {
+    color: #c88a52;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.service-card h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 70px;
+}
+
+.service-card p {
+    color: #888;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+.service-arrow {
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    font-size: 25px;
+    color: #c88a52;
+}
+
+
+/* CONTACT */
+
+.contact {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-content {
+    max-width: 850px;
+}
+
+.contact-content > span {
+    color: #c88a52;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.contact-content h2 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 1;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+.contact-content h2 strong {
+    color: #c88a52;
+    font-weight: 500;
+}
+
+.contact-content p {
+    color: #888;
+    max-width: 550px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 17px 32px;
+    border-radius: 50px;
+    background: #c88a52;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(200,138,82,0.25);
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 35px 8%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: #c88a52;
+}
+
+footer p {
+    color: #666;
+    font-size: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #c88a52;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .services {
+        padding: 100px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* SCROLL REVEAL ANIMATION */
+
+.reveal {
+    .reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+    filter: blur(4px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2,.8,.2,1),
+        filter 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Different directions */
+
+.project-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.service-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.service-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+/* MOUSE GLOW */
+
+.mouse-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(200, 138, 82, 0.08);
+    filter: blur(70px);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: left 0.15s ease, top 0.15s ease;
+}
+.hero-title {
+    animation: heroText 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes heroText {
+
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+}
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 700px) {
+
+    .menu-btn {
+        display: block;
+        z-index: 1001;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+
+        background: rgba(12, 12, 12, 0.96);
+        backdrop-filter: blur(20px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 35px;
+
+        transition: right 0.5s ease;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+}.contact-form {
+    max-width: 850px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #c88a52;
+    box-shadow: 0 0 20px rgba(200, 138, 82, 0.15);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+.contact-button {
+    align-self: flex-start;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #c88a52;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(200, 138, 82, 0.3);
+}
+
+.form-status {
+    color: #c88a52;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+/* ===== PREMIUM POLISH ===== */
+
+body {
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(200, 138, 82, 0.08), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(200, 138, 82, 0.05), transparent 30%),
+        #090909;
+}
+
+/* Elegant selection */
+::selection {
+    background: #c88a52;
+    color: #fff;
+}
+
+/* Glass navbar */
+nav {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: rgba(9, 9, 9, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Buttons */
+.hero-buttons a,
+.contact-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-buttons a::before,
+.contact-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.18),
+        transparent
+    );
+    transition: 0.6s;
+}
+
+.hero-buttons a:hover::before,
+.contact-button:hover::before {
+    left: 100%;
+}
+
+/* Project cards */
+.project-card {
+    transition:
+        transform 0.5s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(200, 138, 82, 0.10);
+    border-color: rgba(200, 138, 82, 0.35);
+}
+
+/* Links */
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: #c88a52;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Text glow */
+.hero h1 strong {
+    text-shadow:
+        0 0 20px rgba(200, 138, 82, 0.18),
+        0 0 50px rgba(200, 138, 82, 0.08);
+}/* ===== FLOATING PARTICLES ===== */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particles::before,
+.particles::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #c88a52;
+    border-radius: 50%;
+    box-shadow:
+        120px 100px #c88a52,
+        300px 250px #c88a52,
+        550px 150px #c88a52,
+        760px 400px #c88a52,
+        900px 180px #c88a52,
+        1100px 500px #c88a52,
+        200px 600px #c88a52,
+        650px 650px #c88a52;
+    opacity: 0.18;
+    animation: floatingParticles 12s linear infinite;
+}
+
+.particles::after {
+    width: 3px;
+    height: 3px;
+    opacity: 0.12;
+    animation-duration: 18s;
+    animation-direction: reverse;
+}
+
+@keyframes floatingParticles {
+    0% {
+        transform: translateY(40px);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(40px);
+    }
+}
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(200, 138, 82, 0.10);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: heroGlow 6s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes heroGlow {
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
+    }
+}/* ===== SERVICES ===== */
+
+.services {
+    position: relative;
+    padding: 120px 8%;
+}
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+.section-heading span {
+    color: #c88a52;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    margin-top: 18px;
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.section-heading h2 strong {
+    display: block;
+    color: #c88a52;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    position: relative;
+    min-height: 330px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.025);
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    right: -100px;
+    bottom: -100px;
+    background: rgba(200,138,82,0.12);
+    filter: blur(70px);
+    border-radius: 50%;
+    transition: 0.6s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(200,138,82,0.35);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.service-card:hover::before {
+    transform: scale(1.5);
+}
+
+.service-number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: rgba(255,255,255,0.25);
+    font-size: 14px;
+}
+
+.service-icon {
+    position: relative;
+    font-size: 38px;
+    color: #c88a52;
+    margin-bottom: 45px;
+}
+
+.service-card h3 {
+    position: relative;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    position: relative;
+    max-width: 480px;
+    color: #999;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.service-link {
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+    color: #c88a52;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover .service-link {
+    transform: translateX(8px);
+}
+
+@media (max-width: 700px) {
+
+    .services {
+        padding: 90px 6%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+}
+/* ===== PROJECTS ===== */
+
+.projects {
+    position: relative;
+    padding: 120px 8%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.025);
+    transition: 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(200,138,82,0.35);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+}
+
+.project-visual {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coffee-project {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,138,82,0.25),
+            transparent 45%
+        ),
+        #111;
+}
+
+.portfolio-project {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,138,82,0.18),
+            transparent 45%
+        ),
+        #0c0c0c;
+}
+
+.coffee-cup {
+    position: relative;
+    font-size: 110px;
+    transition: 0.6s cubic-bezier(.2,.8,.2,1);
+    filter: drop-shadow(0 20px 25px rgba(0,0,0,0.5));
+}
+
+.project-card:hover .coffee-cup {
+    transform: scale(1.18) rotate(-5deg);
+}
+
+.coffee-glow,
+.portfolio-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(200,138,82,0.12);
+    border-radius: 50%;
+    filter: blur(70px);
+    transition: 0.7s ease;
+}
+
+.project-card:hover .coffee-glow,
+.project-card:hover .portfolio-glow {
+    transform: scale(1.4);
+}
+
+.portfolio-text {
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 800;
+    letter-spacing: -5px;
+    color: #c88a52;
+    transition: 0.6s ease;
+}
+
+.project-card:hover .portfolio-text {
+    transform: scale(1.08);
+    letter-spacing: -2px;
+}
+
+.project-tag {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 30px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+    color: #ddd;
+    font-size: 12px;
+}
+
+.project-info {
+    padding: 35px;
+}
+
+.project-number {
+    color: #c88a52;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    margin: 15px 0;
+    font-size: 32px;
+}
+
+.project-info p {
+    color: #999;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.project-tech span {
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    color: #aaa;
+    font-size: 12px;
+}
+
+.project-link {
+    display: inline-block;
+    color: #c88a52;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateX(8px);
+}
+
+@media (max-width: 700px) {
+
+    .projects {
+        padding: 90px 6%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-visual {
+        height: 280px;
+    }
+
+    .project-info {
+        padding: 25px;
+    }
+}
+
+    </style>
+</head>
+
+<body><div class="particles"></div>
+
+  <div class="mouse-glow"></div>  
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            RUBAB<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+     <button class="menu-btn" aria-label="Open menu">
+    ☰
+</button>   
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                Creative Web Developer
+            </div>
+
+            <h1 class="hero-title"
+        
+                I BUILD <br>
+                <span>WEB EXPERIENCES.</span>
+            </h1>
+
+            <p>
+                I create modern, interactive and beautiful websites
+                with clean design, smooth animations and meaningful
+                user experiences.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="scroll">
+            SCROLL ↓
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+    <div class="section-title">
+        <span>01 — ABOUT ME</span>
+        <h2>Turning ideas into<br><strong>beautiful websites.</strong></h2>
+    </div>
+
+    <div class="about-content">
+
+        <div class="about-text">
+            <p>
+                I'm Rubab, a creative web developer who enjoys
+                creating modern, interactive and user-friendly
+                websites.
+            </p>
+
+            <p>
+                I started my journey with HTML, CSS and JavaScript,
+                and I'm continuously learning new technologies to
+                build better digital experiences.
+            </p>
+
+            <a href="#projects" class="about-link">
+                Explore My Work →
+            </a>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div>
+                    <span>HTML</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill html"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div>
+                    <span>CSS</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill css"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div>
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill javascript"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div>
+                    <span>Responsive Design</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill responsive"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- PROJECTS SECTION -->
+
+<!-- ===== PROJECTS SECTION ===== -->
+
+<section class="projects" id="projects">
+
+    <div class="section-heading reveal">
+
+        <span>02 — SELECTED WORK</span>
+
+        <h2>
+            Things I've
+            <strong>built.</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- Coffee Shop -->
+
+        <article class="project-card reveal">
+
+            <div class="project-visual coffee-project">
+
+                <div class="coffee-glow"></div>
+
+                <div class="coffee-cup">☕</div>
+
+                <span class="project-tag">
+                    Web Design
+                </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span class="project-number">
+                    01 / 02
+                </span>
+
+                <h3>
+                    Coffee Shop
+                </h3>
+
+                <p>
+                    A dark, elegant coffee shop website with
+                    smooth animations and a modern user experience.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <a href="Coffee-Shop/index.html" class="project-link">
+    View Project ↗
+</a>
+    ↗
+
+ 
+                
+
+            </div>
+
+        </article>
+
+
+
+        <!-- Portfolio -->
+
+        <article class="project-card reveal">
+
+            <div class="project-visual portfolio-project">
+
+                <div class="portfolio-glow"></div>
+
+                <div class="portfolio-text">
+                    RUBAB.
+                </div>
+
+                <span class="project-tag">
+                    Full-Stack
+                </span>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span class="project-number">
+                    02 / 02
+                </span>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    A personal developer portfolio focused on
+                    modern design, smooth interactions and
+                    full-stack development.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project ↗
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+</section>
+<!-- ===== SERVICES SECTION ===== -->
+
+<section class="services" id="services">
+
+    <div class="section-heading reveal">
+
+        <span>03 — WHAT I DO</span>
+
+        <h2>
+            I build digital experiences
+            <strong>from front to back.</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <!-- Web Design -->
+
+        <div class="service-card reveal">
+
+            <div class="service-number">01</div>
+
+            <div class="service-icon">✦</div>
+
+            <h3>Web Design</h3>
+
+            <p>
+                Modern, elegant and user-friendly website designs
+                created to give your brand a strong digital presence.
+            </p>
+
+            <span class="service-link">
+                Explore Service →
+            </span>
+
+        </div>
+
+
+        <!-- Frontend -->
+
+        <div class="service-card reveal">
+
+            <div class="service-number">02</div>
+
+            <div class="service-icon">◈</div>
+
+            <h3>Frontend Development</h3>
+
+            <p>
+                Responsive and interactive websites built with
+                HTML, CSS and JavaScript with smooth animations.
+            </p>
+
+            <span class="service-link">
+                Explore Service →
+            </span>
+
+        </div>
+
+
+        <!-- Backend -->
+
+        <div class="service-card reveal">
+
+            <div class="service-number">03</div>
+
+            <div class="service-icon">⌘</div>
+
+            <h3>Backend Development</h3>
+
+            <p>
+                Powerful backend systems, APIs, authentication
+                and database integration for modern web applications.
+            </p>
+
+            <span class="service-link">
+                Explore Service →
+            </span>
+
+        </div>
+
+
+        <!-- Full Stack -->
+
+        <div class="service-card reveal">
+
+            <div class="service-number">04</div>
+
+            <div class="service-icon">∞</div>
+
+            <h3>Full-Stack Development</h3>
+
+            <p>
+                Complete web applications combining beautiful
+                frontend interfaces with reliable backend systems.
+            </p>
+
+            <span class="service-link">
+                Explore Service →
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+<section class="contact" id="contact">
+
+    <div class="contact-content reveal">
+        <span>04 — GET IN TOUCH</span>
+
+        <h2>Let's build something <strong>amazing.</strong></h2>
+
+        <p>
+            Have a project in mind? Send me a message and let's create
+            something beautiful together.
+        </p>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+
+        <div class="form-row">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+        </div>
+
+        <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            required
+        >
+
+        <textarea
+            name="message"
+            rows="6"
+            placeholder="Tell me about your project..."
+            required
+        ></textarea>
+
+        <button type="submit" class="contact-button">
+            Send Message →
+        </button>
+
+    </form>
+
+</section>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        RUBAB<span>.</span>
+    </div>
+
+    <p>
+        © 2026 Rubab. Built with creativity & code.
+    </p>
+
+    <div class="social-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+    </div>
+
+</footer>
+<script>
+    const revealElements = document.querySelectorAll(
+        '.section-title, .about-content, .project-card, .service-card, .contact-content'
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    revealElements.forEach((element) => {
+        element.classList.add('reveal');
+        observer.observe(element);
+    });const mouseGlow = document.querySelector(".mouse-glow");
+
+document.addEventListener("mousemove", (event) => {
+
+    mouseGlow.style.left = event.clientX + "px";
+    mouseGlow.style.top = event.clientY + "px";
+
+});
+const menuBtn = document.querySelector(".menu-btn");
+const navMenu = document.querySelector("nav ul");
+
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+const navLinks = document.querySelectorAll("nav ul a");
+
+navLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+
+});const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    formStatus.textContent = "Message received! Backend will be connected next.";
+
+    contactForm.reset();
+});
+
+</script>
+</body>
+</html>
