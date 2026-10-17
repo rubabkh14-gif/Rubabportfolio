@@ -1,5 +1,5 @@
-<! html>
-<htmDOCTYPEl lang="en">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+        
 
         html {
             scroll-behavior: smooth;
@@ -107,8 +107,16 @@
         }
 
         .hero-content {
-            max-width: 900px;
-            animation: fadeUp 1s ease forwards;
+        
+/* Restore the first page text without a card */
+.hero-content {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
         }
 
         .small-text {
@@ -118,6 +126,15 @@
             font-size: 13px;
             margin-bottom: 25px;
         }
+/* Restore the first page text without a card */
+.hero-content {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
 
         .hero h1 {
             font-size: clamp(55px, 10vw, 110px);
@@ -1345,9 +1362,1268 @@ nav ul li a:hover::after {
         padding: 25px;
     }
 }
+/* CINEMATIC GOLDEN UPGRADE */
+
+body {
+    background-color: #050505;
+}
+
+.hero {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(200, 138, 82, 0.09) 45%,
+            transparent 70%
+        );
+    background-size: 200% 200%;
+    animation: goldenLight 8s ease-in-out infinite alternate;
+}
+
+.hero h1 {
+    text-shadow:
+        0 0 25px rgba(200, 138, 82, 0.12),
+        0 0 70px rgba(200, 138, 82, 0.08);
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #a86b39,
+        #ffe0b5,
+        #c88a52,
+        #f5d1a5
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: goldText 5s linear infinite;
+}
+
+@keyframes goldenLight {
+    from {
+        background-position: 0% 50%;
+        opacity: 0.5;
+    }
+    to {
+        background-position: 100% 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes goldText {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero::after,
+    .hero h1 span {
+        animation: none;
+    }
+}
+/* PREMIUM PROJECT CARD HOVER EFFECT */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(200, 138, 82, 0.18);
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #c88a52;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(200, 138, 82, 0.12);
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 25%,
+        rgba(200, 138, 82, 0.10),
+        transparent 75%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-card::before {
+        transition: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+}
+/* PREMIUM GLASS NAVBAR */
+
+nav,
+.navbar {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(5, 5, 5, 0.82);
+    border-bottom: 1px solid rgba(200, 138, 82, 0.18);
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+nav:hover,
+.navbar:hover {
+    border-bottom-color: rgba(200, 138, 82, 0.5);
+    box-shadow: 0 8px 30px rgba(200, 138, 82, 0.06);
+}
+
+nav a,
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+.navbar a:hover {
+    color: #e4b17b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav,
+    .navbar,
+    nav a,
+    .navbar a {
+        transition: none;
+    }
+}/* FIX NAVBAR SPACING AND ALIGNMENT */
+
+nav,
+.navbar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 7%;
+}
+
+nav a,
+.navbar a {
+    margin-left: 18px;
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+/* Keep navbar content properly aligned */
+nav,
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+css
+/* ===== ATTRACTIVE HOME PAGE ===== */
+
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 7% 75px;
+    background:
+        radial-gradient(ellipse at 80% 45%,
+        rgba(190, 139, 65, 0.10), transparent 42%),
+        #0b0b0c;
+    color: #f7f2e9;
+    isolation: isolate;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    animation: heroEnter 0.9s ease both;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(219, 177, 104, 0.3);
+    background: rgba(219, 177, 104, 0.07);
+    color: #e8c991;
+    border-radius: 40px;
+    padding: 10px 16px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    margin-bottom: 28px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #9bd6a1;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #9bd6a1;
+}
+
+.hero-eyebrow {
+    color: #c6a36a;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 5.2vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+    font-weight: 750;
+    margin: 0 0 24px;
+}
+
+.gradient-text {
+    display: block;
+    background: linear-gradient(100deg, #f4d7a0, #bd8c45, #fff0cd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 520px;
+    color: #aaa7a0;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    text-decoration: none;
+    padding: 15px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.primary-btn {
+    color: #17120a;
+    background: linear-gradient(110deg, #f1d29a, #bc8a45);
+    box-shadow: 0 8px 30px rgba(190, 139, 69, 0.13);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(190, 139, 69, 0.3);
+}
+
+.secondary-btn {
+    color: #f2e8d6;
+    border: 1px solid #484037;
+    background: rgba(255,255,255,0.02);
+}
+
+.secondary-btn:hover {
+    border-color: #c6a36a;
+    background: rgba(198, 163, 106, 0.08);
+    transform: translateY(-4px);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 48px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    flex-wrap: wrap;
+}
+
+.hero-stats h3 {
+    color: #d9b779;
+    font-size: 23px;
+    margin: 0 0 6px;
+}
+
+.hero-stats p {
+    color: #89857e;
+    font-size: 11px;
+    margin: 0;
+}
+
+/* RIGHT-SIDE CREATIVE VISUAL */
+
+.hero-visual {
+    position: relative;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: heroEnter 1s 0.15s ease both;
+}
+
+.developer-card {
+    width: min(100%, 410px);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(145deg, #191817, #101010);
+    border: 1px solid rgba(214, 175, 108, 0.28);
+    border-radius: 18px;
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.45),
+        0 0 60px rgba(190,139,69,0.06);
+    overflow: hidden;
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.developer-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+    border-color: rgba(214, 175, 108, 0.65);
+}
+
+.card-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #b48b52;
+}
+
+.window-dots span:nth-child(2) {
+    background: #82735a;
+}
+
+.window-dots span:nth-child(3) {
+    background: #625c50;
+}
+
+.card-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #888178;
+}
+
+.code-art {
+    padding: 28px 24px 32px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: clamp(10px, 1.1vw, 13px);
+    line-height: 2.2;
+    color: #d5cfc5;
+}
+
+.code-art p {
+    margin: 0;
+}
+
+.code-purple { color: #c9a4ed; }
+.code-blue { color: #91c8ee; }
+.code-green { color: #b4d99d; }
+.code-orange { color: #e9bc80; }
+
+.code-indent { padding-left: 22px; }
+.code-more { padding-left: 44px; }
+
+.code-cursor {
+    width: 7px;
+    height: 17px;
+    background: #d6b375;
+    display: inline-block;
+    vertical-align: middle;
+    animation: cursorBlink 1s steps(2) infinite;
+}
+
+.card-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 15px 20px;
+    color: #aaa39a;
+    font-size: 11px;
+}
+
+.mini-icon {
+    color: #e2bd7d;
+    margin-right: 7px;
+}
+
+.visual-orbit {
+    position: absolute;
+    border: 1px solid rgba(204, 163, 96, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 410px;
+    height: 410px;
+    animation: orbitSpin 30s linear infinite;
+}
+
+.orbit-two {
+    width: 340px;
+    height: 340px;
+    border-style: dashed;
+    animation: orbitSpin 40s linear infinite reverse;
+}
+
+.floating-chip {
+    position: absolute;
+    z-index: 3;
+    padding: 13px 17px;
+    border: 1px solid rgba(220, 183, 121, 0.24);
+    border-radius: 10px;
+    background: rgba(25, 24, 22, 0.94);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    color: #e8dfd0;
+    font-size: 11px;
+    animation: floatUp 4s ease-in-out infinite;
+}
+
+.floating-chip span {
+    color: #e2bd7d;
+    margin-right: 7px;
+}
+
+.chip-top {
+    top: 65px;
+    right: -5px;
+}
+
+.chip-bottom {
+    bottom: 60px;
+    left: -10px;
+    animation-delay: -2s;
+}
+
+.floating-circle {
+    position: absolute;
+    top: 45px;
+    left: 12%;
+    font-size: 35px;
+    color: #d4ae70;
+    animation: floatUp 5s ease-in-out infinite;
+}
+
+.hero-glow {
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.glow-one {
+    background: rgba(174, 119, 45, 0.12);
+    top: 5%;
+    right: 5%;
+}
+
+.glow-two {
+    background: rgba(119, 84, 47, 0.08);
+    bottom: 0;
+    left: 10%;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 22px;
+    left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #827a6e;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    height: 1px;
+    width: 42px;
+    background: #b9955d;
+    animation: linePulse 2s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes heroEnter {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes orbitSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes cursorBlink {
+    50% { opacity: 0; }
+}
+
+@keyframes linePulse {
+    50% { opacity: 0.35; transform: scaleX(0.6); }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 70px 6% 85px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .chip-top { right: 0; }
+    .chip-bottom { left: 0; }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 43px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats p {
+        font-size: 10px;
+    }
+
+    .hero-visual {
+        min-height: 340px;
+    }
+
+    .orbit-one {
+        width: 310px;
+        height: 310px;
+    }
+
+    .orbit-two {
+        width: 270px;
+        height: 270px;
+    }
+
+    .code-art {
+        padding: 22px 14px;
+        font-size: 10px;
+    }
+
+    .card-topbar,
+    .card-bottom {
+        padding: 13px;
+    }
+
+    .chip-top {
+        top: 15px;
+    }
+
+    .chip-bottom {
+        bottom: 15px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-section *,
+    .hero-section *::before,
+    .hero-section *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+.css
+/* ===== FINAL HOME PAGE ALIGNMENT FIX ===== */
+
+/* Home page content ko vertically center karo */
+.hero-section {
+    justify-content: center;
+}
+
+.hero-container {
+    align-items: center;
+}
+
+/* Left-side writing ko center karo */
+.hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-eyebrow {
+    width: 100%;
+    line-height: 1.8;
+}
+
+.hero-content h1 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    justify-content: center;
+    width: 100%;
+}
+
+/* 01, 02, 03 cards ko neat rakho */
+.hero-stats {
+    width: 100%;
+    align-items: stretch;
+    text-align: left;
+}
+
+.stat-card {
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+/* MY CREATIVE SPACE card ko center aur straight karo */
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.developer-card {
+    width: 100%;
+    max-width: 410px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    transform: none;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card ke andar writing ko proper spacing do */
+.card-topbar {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card-label {
+    text-align: right;
+}
+
+.creative-heading {
+    text-align: left;
+}
+
+.code-art {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    line-height: 2;
+}
+
+.creative-skills {
+    align-items: center;
+}
+
+.card-bottom {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Desktop aur laptop */
+@media (min-width: 901px) {
+    .hero-container {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 45px;
+    }
+
+    .hero-content,
+    .hero-visual {
+        min-width: 0;
+    }
+}
+
+/* Mobile aur tablet */
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-visual {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .developer-card {
+        max-width: 410px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(36px, 10vw, 43px);
+        letter-spacing: -1px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .card-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+css
+/* GOLDEN LIGHT ON SCROLL */
+
+body {
+    --scroll-light-x: 50%;
+    --scroll-light-y: 50%;
+}
+
+.scroll-light {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 230px at var(--scroll-light-x) var(--scroll-light-y),
+        rgba(219, 174, 98, 0.12),
+        rgba(190, 139, 69, 0.045) 45%,
+        transparent 75%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-light.active {
+    opacity: 1;
+}
+
+/* Sections smoothly appear while scrolling */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .scroll-light {
+        display: none;
+    }
+}
+
+/* Frontend visibility fix */
+.about-section,
+.projects-section,
+.services-section,
+.contact-section,
+.reveal-on-scroll {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Center text inside the card */
+.developer-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.developer-card h1,
+.developer-card h2,
+.developer-card h3,
+.developer-card p,
+.developer-card span {
+    text-align: center;
+}
+
+/* Improve spacing around hero text */
+.hero-content {
+    padding-right: 35px;
+}
+
+.hero-content h1 {
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    line-height: 1.9;
+    margin-top: 18px;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+/* Keep the creative card separate */
+.hero-visual {
+    padding-left: 25px;
+}
+
+.developer-card {
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-right: 0;
+    }
+
+    .hero-visual {
+        padding-left: 0;
+    }
+
+    .developer-card {
+        margin: 12px;
+    }
+}
+
+/* Spacing for text OUTSIDE the Creative Space card */
+.hero-content {
+    gap: 24px;
+}
+
+.hero-content h1 {
+    line-height: 1.4;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    line-height: 2;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+/* Add breathing room between text elements */
+.hero-content > * + * {
+    margin-top: 16px;
+}
+
+/* Turn the outside hero text into a separate card */
+.hero-content > p {
+    background: linear-gradient(
+        135deg,
+        rgba(218, 174, 100, 0.10),
+        rgba(255, 255, 255, 0.025)
+    );
+    border: 1px solid rgba(218, 174, 100, 0.3);
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-top: 22px;
+    margin-bottom: 24px;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    max-width: 520px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.hero-content > p:hover {
+    border-color: rgba(218, 174, 100, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(218, 174, 100, 0.09);
+}
+
+@media (max-width: 768px) {
+    .hero-content > p {
+        padding: 18px 20px;
+        max-width: 100%;
+    }
+}
+
+/* Turn the outside hero text into a separate card */
+.hero-content > p {
+    background: linear-gradient(
+        135deg,
+        rgba(218, 174, 100, 0.10),
+        rgba(255, 255, 255, 0.025)
+    );
+    border: 1px solid rgba(218, 174, 100, 0.3);
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-top: 22px;
+    margin-bottom: 24px;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    max-width: 520px;
+    transition: border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.hero-content > p:hover {
+    border-color: rgba(218, 174, 100, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(218, 174, 100, 0.09);
+}
+
+@media (max-width: 768px) {
+    .hero-content > p {
+        padding: 18px 20px;
+        max-width: 100%;
+    }
+}
+
+/* Card for the text beside My Creative Space */
+.hero-content {
+    background: rgba(218, 174, 100, 0.06);
+    border: 1px solid rgba(218, 174, 100, 0.3);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1 {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 20px;
+    }
+}
+
+/* Card for the text beside My Creative Space */
+.hero-content {
+    background: rgba(218, 174, 100, 0.06);
+    border: 1px solid rgba(218, 174, 100, 0.3);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1 {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 20px;
+    }
+}
+
+
+/* FINAL FIX: remove card styling from first-page text */
+#home .hero-content,
+#home .hero-content::before,
+#home .hero-content::after {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Keep the first-page text layout */
+#home .hero-content {
+    padding: 0 !important;
+}
+
+/* Center first-page hero writing */
+#home .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home .hero-content h1,
+#home .hero-content p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Clean spacing for text beside the creative card */
+.hero-visual + .hero-content,
+.hero-content + .hero-visual {
+    gap: 28px;
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content h3 {
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+
+.hero-content p {
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+
+.hero-content p + p {
+    margin-top: 22px;
+}
+
+@media (max-width: 768px) {
+    .hero-content p {
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+}
+
+/* Professional spacing for About Me heading */
+#about h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+/* Creative Design & Smart Development text */
+#about .creative-text {
+    display: block;
+    margin-bottom: 24px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+/* Professional spacing and alignment */
+#about {
+    padding-top: 45px;
+}
+
+#about h2 {
+    margin-top: 25px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* Keep the three text items in a straight line */
+#about .creative-text,
+#about .smart-development,
+#about .responsive-layout {
+    display: inline-block;
+    vertical-align: top;
+    margin: 12px 18px;
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+    #about .creative-text,
+    #about .smart-development,
+    #about .responsive-layout {
+        display: block;
+        margin: 16px 0;
+    }
+}
+
+#about .creative-text,
+#about .smart-development,
+#about .responsive-layout {
+    display: inline-block;
+    margin-right: 30px;
+    line-height: 1.8;
+    vertical-align: middle;
+}
+
+#about .creative-text,
+#about .smart-development,
+#about .responsive-layout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 25px 20px 0;
+    vertical-align: middle;
+    line-height: 1.8;
+}
+
+#about .creative-text {
+    position: relative;
+    top: -15px;
+}
+
+
+/* Space between the three stat cards and About Me */
+.stat-card {
+    margin-bottom: 20px;
+}
+
+/* Move About Me heading slightly down */
+.about-content {
+    margin-top: 35px;
+    padding-top: 15px;
+}
+
+/* Keep each stat card neatly aligned */
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Arrange all three cards in one row */
+.stats-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
 
     </style>
 </head>
+
 
 <body><div class="particles"></div>
 
@@ -1372,53 +2648,123 @@ nav ul li a:hover::after {
 
 
     <!-- HERO -->
-    <section class="hero" id="home">
+
+<!-- HOME / HERO SECTION -->
+<section class="hero-section" id="home">
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="hero-container">
 
         <div class="hero-content">
-
-            <div class="small-text">
-                Creative Web Developer
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Available for Creative Projects
             </div>
 
-            <h1 class="hero-title"
-        
-                I BUILD <br>
-                <span>WEB EXPERIENCES.</span>
+            <p class="hero-eyebrow">HELLO, I'M A WEB DEVELOPER</p>
+
+            <h1>
+                I Build Digital
+                <span class="gradient-text">Experiences</span>
+                That Inspire.
             </h1>
 
-            <p>
-                I create modern, interactive and beautiful websites
-                with clean design, smooth animations and meaningful
-                user experiences.
+            <p class="hero-description">
+                I create modern, responsive and elegant websites
+                with creative frontend designs and powerful backend
+                functionality.
             </p>
 
-            <div class="buttons">
-
-                <a href="#projects" class="btn primary">
-                    View My Work
+            <div class="hero-buttons">
+                <a href="#projects" class="hero-btn primary-btn">
+                    Explore My Work <span>↗</span>
                 </a>
 
-                <a href="#contact" class="btn secondary">
-                    Contact Me
+                <a href="#contact" class="hero-btn secondary-btn">
+                    Let's Talk
                 </a>
-
             </div>
 
-        </div>
 
-        <div class="scroll">
-            SCROLL ↓
-        </div>
-
-    </section>
+</div>
+   </section>
 
     <!-- ABOUT SECTION -->
 <section class="about" id="about">
 
     <div class="section-title">
+<div class="hero-stats">
+    <div class="stat-card">
+        <span class="stat-number">01</span>
+        <div>
+            <h4>Creative Design</h4>
+            <p>Beautiful user experiences</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-number">02</span>
+        <div>
+            <h4>Smart Development</h4>
+            <p>Clean and useful code</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-number">03</span>
+        <div>
+            <h4>Responsive Layouts</h4>
+            <p>Made for every screen</p>
+        </div>
+    </div>
+</div>
         <span>01 — ABOUT ME</span>
         <h2>Turning ideas into<br><strong>beautiful websites.</strong></h2>
     </div>
+<div class="developer-card">
+    <div class="card-topbar">
+        <div class="window-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="card-label">MY CREATIVE SPACE</span>
+    </div>
+
+    <div class="creative-heading">
+        <span class="creative-icon">✦</span>
+        <h3>Ideas into Reality<span>.</span></h3>
+        <p>Design. Develop. Create.</p>
+    </div>
+
+    <div class="code-art">
+        <p><span class="code-purple">const</span>
+           <span class="code-blue">myWork</span> = {</p>
+        <p class="code-indent">
+            creativity: <span class="code-green">"Unlimited"</span>,
+        </p>
+        <p class="code-indent">
+            design: <span class="code-green">"Modern & Elegant"</span>,
+        </p>
+        <p class="code-indent">
+            development: <span class="code-green">"Responsive"</span>
+        </p>
+        <p>};</p>
+    </div>
+
+    <div class="creative-skills">
+        <span>✧ Frontend</span>
+        <span>⌘ Backend</span>
+        <span>✦ Full Stack</span>
+    </div>
+
+    <div class="card-bottom">
+        <span class="mini-icon">●</span>
+        Building something meaningful
+    </div>
+</div>
+
 
     <div class="about-content">
 
@@ -1862,8 +3208,126 @@ contactForm.addEventListener("submit", function (e) {
     formStatus.textContent = "Message received! Backend will be connected next.";
 
     contactForm.reset();
+})
+
+const light = document.createElement("div");
+light.className = "scroll-light";
+document.body.appendChild(light);
+
+let lightTimer;
+
+window.addEventListener("scroll", () => {
+    const maxScroll = Math.max(
+        1,
+        document.documentElement.scrollHeight - window.innerHeight
+    );
+
+    const scrollPercent = window.scrollY / maxScroll;
+    const x = 20 + scrollPercent * 60;
+    const y = 20 + scrollPercent * 60;
+
+    document.body.style.setProperty("--scroll-light-x", `${x}%`);
+    document.body.style.setProperty("--scroll-light-y", `${y}%`);
+
+    light.classList.add("active");
+
+    clearTimeout(lightTimer);
+    lightTimer = setTimeout(() => {
+        light.classList.remove("active");
+    }, 650);
+}, { passive: true });
+
+const revealItems = document.querySelectorAll(
+    ".about-section, .projects-section, .services-section, .contact-section"
+);
+
+revealItems.forEach(section => {
+    section.classList.add("reveal-on-scroll");
 });
 
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(section => observer.observe(section));
+} else {
+    revealItems.forEach(section => section.classList.add("visible"));
+}
+
+</script>
+
+}
+
+
+<script>
+(function () {
+    if (document.querySelector(".floating-bubbles")) return;
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .floating-bubbles {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-bubble {
+            position: absolute;
+            bottom: -100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,
+                rgba(255, 224, 160, 0.5),
+                rgba(202, 155, 77, 0.08) 65%,
+                transparent);
+            border: 1px solid rgba(226, 184, 105, 0.25);
+            box-shadow: 0 0 18px rgba(219, 174, 98, 0.16);
+            animation: bubbleRise linear infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes bubbleRise {
+            0%   { transform: translate3d(0, 0, 0) scale(.7); opacity: 0; }
+            15%  { opacity: .65; }
+            80%  { opacity: .4; }
+            100% { transform: translate3d(45px, -115vh, 0) scale(1.2); opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .floating-bubble { animation: none; display: none; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    const container = document.createElement("div");
+    container.className = "floating-bubbles";
+    container.setAttribute("aria-hidden", "true");
+
+    for (let i = 0; i < 18; i++) {
+        const bubble = document.createElement("span");
+        bubble.className = "floating-bubble";
+
+        
+const size = 4 + Math.random() * 14;
+
+        bubble.style.width = size + "px";
+        bubble.style.height = size + "px";
+        bubble.style.left = Math.random() * 100 + "%";
+        bubble.style.animationDuration = (9 + Math.random() * 13) + "s";
+        bubble.style.animationDelay = (-Math.random() * 20) + "s";
+
+        container.appendChild(bubble);
+    }
+
+    document.body.prepend(container);
+})();
 </script>
 </body>
 </html>
