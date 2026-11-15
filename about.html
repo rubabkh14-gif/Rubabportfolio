@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | Rubab</title>
+<meta name="description" content="Get to know Rubab, a computer science student exploring web development, creativity and technology.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --ivory: #F5F3ED;
+    --forest: #293B32;
+    --forest-dark: #202E27;
+    --sage: #879582;
+    --light-sage: #E7E9DF;
+    --terracotta: #A66D52;
+    --champagne: #D8C5A8;
+    --white: #FFFDF8;
+    --text: #68736B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivory);
+    color: var(--forest);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1160px, 88%);
+    margin: auto;
+}
+
+.eyebrow {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    min-height: 82px;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(245,243,237,.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(41,59,50,.09);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 31px;
+    font-weight: 700;
+    color: var(--forest);
+}
+
+.logo span {
+    color: var(--terracotta);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--terracotta);
+}
+
+.nav-links .nav-contact {
+    background: var(--forest);
+    color: white;
+    padding: 13px 23px;
+    border-radius: 30px;
+}
+
+.nav-links .nav-contact:hover {
+    background: var(--terracotta);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    color: var(--forest);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.about-hero {
+    padding: 95px 0 90px;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(216,197,168,.35), transparent 28%),
+        radial-gradient(circle at 5% 90%, rgba(135,149,130,.15), transparent 30%),
+        var(--ivory);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 6vw, 75px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-top: 22px;
+}
+
+.hero-text h1 span {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.hero-text p {
+    max-width: 520px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.95;
+    margin-top: 25px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-label::before {
+    content: "";
+    width: 27px;
+    height: 1px;
+    background: var(--terracotta);
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--forest);
+    color: white;
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 30px;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: var(--terracotta);
+    transform: translateY(-4px);
+}
+
+/* PROFILE CARD */
+
+.profile-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 420px;
+}
+
+.profile-card {
+    width: 310px;
+    min-height: 365px;
+    background: var(--forest);
+    border-radius: 18px;
+    padding: 27px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    box-shadow: 0 25px 55px rgba(41,59,50,.2);
+    transform: rotate(3deg);
+    transition: .4s;
+}
+
+.profile-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.profile-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--champagne);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.profile-avatar {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    background: var(--light-sage);
+    color: var(--forest);
+    border: 3px solid var(--champagne);
+    display: grid;
+    place-items: center;
+    margin: 30px auto 22px;
+    font-family: 'Playfair Display', serif;
+    font-size: 82px;
+}
+
+.profile-card h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+}
+
+.profile-card > p {
+    text-align: center;
+    color: #D8C5A8;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 7px;
+}
+
+.profile-line {
+    height: 1px;
+    background: rgba(255,255,255,.2);
+    margin: 22px 0 17px;
+}
+
+.profile-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: #E7E9DF;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.profile-ring {
+    position: absolute;
+    width: 365px;
+    height: 365px;
+    border: 1px solid rgba(135,149,130,.5);
+    border-radius: 50%;
+}
+
+.profile-ring::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    border: 1px dashed rgba(166,109,82,.4);
+    border-radius: 50%;
+}
+
+.profile-badge {
+    position: absolute;
+    z-index: 3;
+    background: var(--white);
+    border: 1px solid rgba(135,149,130,.35);
+    padding: 13px 17px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(41,59,50,.1);
+}
+
+.badge-left {
+    left: -5px;
+    top: 55px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.badge-right {
+    right: -5px;
+    bottom: 65px;
+    color: var(--terracotta);
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* STORY SECTION */
+
+.story-section {
+    background: var(--white);
+    padding: 100px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: 80px;
+}
+
+.story-side h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    line-height: 1.2;
+    margin-top: 18px;
+}
+
+.story-side h2 span {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.story-side .story-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    color: var(--light-sage);
+    margin-top: 30px;
+    line-height: 1;
+}
+
+.story-content p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.story-quote {
+    padding: 25px 28px;
+    border-left: 3px solid var(--terracotta);
+    background: var(--ivory);
+    margin-top: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--forest);
+}
+
+/* JOURNEY */
+
+.journey-section {
+    padding: 100px 0;
+    background: var(--ivory);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 48px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(37px, 4.5vw, 52px);
+    line-height: 1.15;
+    margin-top: 17px;
+}
+
+.section-heading h2 span {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 16px;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.journey-card {
+    padding: 32px 27px;
+    background: var(--white);
+    border: 1px solid rgba(135,149,130,.25);
+    border-radius: 16px;
+    transition: .35s;
+}
+
+.journey-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(41,59,50,.09);
+    border-color: var(--sage);
+}
+
+.journey-index {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: var(--terracotta);
+}
+
+.journey-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-top: 23px;
+}
+
+.journey-card p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 13px;
+}
+
+/* VALUES SECTION */
+
+.values-section {
+    padding: 85px 0;
+    background: var(--light-sage);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.values-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    line-height: 1.2;
+    margin-top: 17px;
+}
+
+.values-heading h2 span {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.values-heading p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 17px;
+}
+
+.value-list {
+    display: grid;
+    gap: 13px;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    padding: 18px 20px;
+    border-radius: 12px;
+}
+
+.value-symbol {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--forest);
+    color: var(--champagne);
+    font-size: 18px;
+}
+
+.value-item h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.value-item p {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* CTA */
+
+.contact-cta {
+    background: var(--forest);
+    color: white;
+    text-align: center;
+    padding: 85px 0;
+}
+
+.contact-cta .eyebrow {
+    color: var(--champagne);
+}
+
+.contact-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 55px);
+    max-width: 720px;
+    margin: 18px auto 0;
+    line-height: 1.2;
+}
+
+.contact-cta p {
+    color: #D4DED4;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 17px;
+}
+
+.contact-cta a {
+    display: inline-flex;
+    margin-top: 28px;
+    background: var(--champagne);
+    color: var(--forest);
+    padding: 15px 26px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.contact-cta a:hover {
+    background: var(--terracotta);
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--forest-dark);
+    color: white;
+    padding: 55px 0 25px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 31px;
+}
+
+.footer-brand h2 span {
+    color: var(--terracotta);
+}
+
+.footer-brand p {
+    color: #C3CEC2;
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 270px;
+    margin-top: 14px;
+}
+
+.footer-column h4 {
+    color: var(--champagne);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 19px;
+}
+
+.footer-column a {
+    display: block;
+    color: #C3CEC2;
+    font-size: 12px;
+    margin-bottom: 13px;
+    transition: .3s;
+}
+
+.footer-column a:hover {
+    color: var(--champagne);
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.13);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #AAB7AA;
+    font-size: 11px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TABLET */
+
+@media(max-width: 900px) {
+    .hero-grid {
+        gap: 30px;
+    }
+
+    .story-grid {
+        gap: 40px;
+    }
+
+    .values-grid {
+        gap: 30px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 720px) {
+    .navbar {
+        min-height: 73px;
+        padding: 14px 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 25px 7%;
+        background: var(--ivory);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        box-shadow: 0 15px 25px rgba(41,59,50,.09);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .about-hero {
+        padding: 70px 0 65px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(45px, 10vw, 65px);
+    }
+
+    .profile-area {
+        min-height: 410px;
+        transform: scale(.9);
+    }
+
+    .story-section,
+    .journey-section {
+        padding: 75px 0;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-side h2 {
+        font-size: 38px;
+    }
+
+    .story-side .story-number {
+        font-size: 65px;
+        margin-top: 15px;
+    }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .values-heading h2 {
+        font-size: 38px;
+    }
+
+    .contact-cta {
+        padding: 70px 0;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media(max-width: 400px) {
+    .profile-area {
+        transform: scale(.78);
+        margin: -30px -35px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <a href="index.html" class="logo">R<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="nav-contact">Let's Talk ↗</a>
+    </div>
+</nav>
+
+<!-- ABOUT HERO -->
+
+<header class="about-hero">
+    <div class="container hero-grid">
+
+        <div class="hero-text reveal">
+
+            <div class="hero-label eyebrow">01 — ABOUT ME</div>
+
+            <h1>
+                The Person
+                Behind The
+                <span>Code.</span>
+            </h1>
+
+            <p>
+                I'm Rubab, a computer science student exploring the
+                creative world of web development. I enjoy learning
+                how technology and design come together to create
+                meaningful digital experiences.
+            </p>
+
+            <a href="#my-story" class="hero-button">
+                Discover My Story ↗
+            </a>
+
+        </div>
+
+        <div class="profile-area reveal">
+
+            <div class="profile-ring"></div>
+
+            <div class="profile-card">
+
+                <div class="profile-top">
+                    <span>PROFILE</span>
+                    <span>001</span>
+                </div>
+
+                <div class="profile-avatar">R</div>
+
+                <h2>RUBAB</h2>
+                <p>CREATIVE MIND · DEVELOPER IN PROGRESS</p>
+
+                <div class="profile-line"></div>
+
+                <div class="profile-bottom">
+                    <span>DESIGN</span>
+                    <span>DEVELOP</span>
+                    <span>GROW</span>
+                </div>
+
+            </div>
+
+            <div class="profile-badge badge-left">
+                ✦ HTML & CSS
+            </div>
+
+            <div class="profile-badge badge-right">
+                JavaScript · Bootstrap
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<!-- MY STORY -->
+
+<section class="story-section" id="my-story">
+    <div class="container story-grid">
+
+        <div class="story-side reveal">
+
+            <span class="eyebrow">MY STORY</span>
+
+            <h2>
+                Turning ideas into
+                <span>beautiful websites.</span>
+            </h2>
+
+            <div class="story-number">01</div>
+
+        </div>
+
+        <div class="story-content reveal">
+
+            <p>
+                My journey into technology began with curiosity about
+                how websites work and how digital ideas become real
+                experiences. That curiosity gradually developed into
+                an interest in computer science and web development.
+            </p>
+
+            <p>
+                I enjoy working with HTML, CSS and JavaScript to
+                understand the structure, appearance and behaviour
+                of websites. I also explore Bootstrap and responsive
+                design to make my projects more organized and adaptable.
+            </p>
+
+            <p>
+                For me, every project is an opportunity to experiment,
+                solve problems and improve. I'm still learning, and
+                that process is what motivates me to keep creating.
+            </p>
+
+            <div class="story-quote">
+                "Good design makes an idea clear.
+                Good development brings that idea to life."
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- MY JOURNEY -->
+
+<section class="journey-section">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">WHAT DEFINES MY JOURNEY</span>
+
+            <h2>
+                Learning, creating
+                <span>and growing.</span>
+            </h2>
+
+            <p>
+                Three ideas that guide the way I approach technology,
+                creativity and every new project.
+            </p>
+        </div>
+
+        <div class="journey-grid">
+
+            <article class="journey-card reveal">
+                <div class="journey-index">01</div>
+                <h3>Creative Design</h3>
+                <p>
+                    Exploring visual layouts, thoughtful typography
+                    and balanced colours to create clear and engaging
+                    user experiences.
+                </p>
+            </article>
+
+            <article class="journey-card reveal">
+                <div class="journey-index">02</div>
+                <h3>Smart Development</h3>
+                <p>
+                    Learning to write organized code, understand
+                    website functionality and turn design concepts
+                    into working interfaces.
+                </p>
+            </article>
+
+            <article class="journey-card reveal">
+                <div class="journey-index">03</div>
+                <h3>Continuous Growth</h3>
+                <p>
+                    Building practical projects, exploring new
+                    technologies and improving through curiosity
+                    and consistent practice.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- VALUES -->
+
+<section class="values-section">
+    <div class="container values-grid">
+
+        <div class="values-heading reveal">
+
+            <span class="eyebrow">MY APPROACH</span>
+
+            <h2>
+                The details matter.
+                <span>So does the journey.</span>
+            </h2>
+
+            <p>
+                I believe that meaningful digital work comes from
+                patience, curiosity and attention to detail.
+                These are the principles I try to bring into
+                every project I create.
+            </p>
+
+        </div>
+
+        <div class="value-list reveal">
+
+            <div class="value-item">
+                <div class="value-symbol">✦</div>
+                <div>
+                    <h3>Curiosity</h3>
+                    <p>Always asking questions and exploring new ideas.</p>
+                </div>
+            </div>
+
+            <div class="value-item">
+                <div class="value-symbol">⌘</div>
+                <div>
+                    <h3>Creativity</h3>
+                    <p>Finding thoughtful ways to present digital ideas.</p>
+                </div>
+            </div>
+
+            <div class="value-item">
+                <div class="value-symbol">↗</div>
+                <div>
+                    <h3>Consistency</h3>
+                    <p>Improving through regular learning and practice.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT CTA -->
+
+<section class="contact-cta">
+    <div class="container reveal">
+
+        <span class="eyebrow">LET'S CONNECT</span>
+
+        <h2>
+            Every great idea
+            starts with a conversation.
+        </h2>
+
+        <p>
+            Have an idea, a question or simply want to connect?
+            Let's start a conversation.
+        </p>
+
+        <a href="contact.html">Let's Talk ↗</a>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <h2>Rubab<span>.</span></h2>
+                <p>
+                    Exploring creativity and technology to build
+                    thoughtful and meaningful digital experiences.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>EXPLORE</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>DISCOVER</h4>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Rubab. All rights reserved.</span>
+            <span>Designed with creativity and care.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("open");
+
+    const isOpen = navLinks.classList.contains("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+    });
+});
+
+/* SCROLL REVEAL */
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(function(element) {
+    observer.observe(element);
+});
+</script>
+
+</body>
+</html>

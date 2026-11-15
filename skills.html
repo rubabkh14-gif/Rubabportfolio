@@ -1,0 +1,946 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills | Rubab Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --ivory: #F5F3ED;
+    --forest: #293B32;
+    --footer: #202E27;
+    --sage: #879582;
+    --light-sage: #E7E9DF;
+    --terracotta: #A66D52;
+    --champagne: #D8C5A8;
+    --text: #657066;
+    --white: #FFFDF8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--forest);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+
+.navbar {
+    min-height: 82px;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,243,237,.96);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(41,59,50,.09);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--forest);
+}
+
+.logo span {
+    color: var(--terracotta);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--terracotta);
+}
+
+.nav-links .contact-link {
+    background: var(--forest);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+}
+
+.nav-links .contact-link:hover {
+    background: var(--terracotta);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: var(--forest);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    padding: 85px 8% 20px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 15% 35%, rgba(216,197,168,.25), transparent 30%),
+        var(--ivory);
+}
+
+.eyebrow {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 6.5vw, 78px);
+    line-height: 1.12;
+    font-weight: 600;
+    color: var(--forest);
+}
+
+.hero h1 span {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 23px auto 0;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.orbit-label {
+    text-align: center;
+    margin-top: 48px;
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+/* ORBIT SECTION */
+
+.orbit-section {
+    padding: 25px 15px 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.orbit-stage {
+    width: 560px;
+    height: 560px;
+    max-width: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+/* CIRCULAR RINGS */
+
+.orbit-ring {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(135,149,130,.45);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-ring.inner {
+    width: 330px;
+    height: 330px;
+    border-style: dashed;
+    border-color: rgba(166,109,82,.45);
+}
+
+.orbit-ring.outer {
+    width: 525px;
+    height: 525px;
+    border-color: rgba(135,149,130,.24);
+}
+
+/* CENTER CIRCLE */
+
+.center-circle {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 25%, #506B59, var(--forest) 75%);
+    border: 2px solid var(--champagne);
+    box-shadow: 0 15px 45px rgba(41,59,50,.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+}
+
+.center-star {
+    font-size: 31px;
+    color: var(--champagne);
+    margin-bottom: 16px;
+}
+
+.center-circle h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 1.35;
+    color: white;
+}
+
+.center-circle p {
+    margin-top: 10px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--champagne);
+}
+
+/* MOVING ORBIT TRACK */
+
+.orbit-track {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -225px;
+    border-radius: 50%;
+    animation: orbitMove 32s linear infinite;
+}
+
+/* Each item is positioned around the circular path */
+
+.orbit-item {
+    position: absolute;
+    width: 130px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    margin-left: -65px;
+    margin-top: -35px;
+}
+
+/* Six different positions */
+
+.orbit-item:nth-child(1) {
+    transform: rotate(0deg) translateY(-225px);
+}
+
+.orbit-item:nth-child(2) {
+    transform: rotate(60deg) translateY(-225px);
+}
+
+.orbit-item:nth-child(3) {
+    transform: rotate(120deg) translateY(-225px);
+}
+
+.orbit-item:nth-child(4) {
+    transform: rotate(180deg) translateY(-225px);
+}
+
+.orbit-item:nth-child(5) {
+    transform: rotate(240deg) translateY(-225px);
+}
+
+.orbit-item:nth-child(6) {
+    transform: rotate(300deg) translateY(-225px);
+}
+
+/* Cards rotate back to stay readable */
+
+.orbit-card {
+    width: 130px;
+    height: 70px;
+    border-radius: 15px;
+    background: var(--white);
+    border: 1px solid rgba(135,149,130,.65);
+    box-shadow: 0 10px 25px rgba(41,59,50,.13);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    animation: cardStayUpright 32s linear infinite;
+    transition: box-shadow .3s;
+}
+
+.orbit-card:hover {
+    box-shadow: 0 14px 30px rgba(166,109,82,.25);
+}
+
+.orbit-card strong {
+    color: var(--forest);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.orbit-card span {
+    color: var(--terracotta);
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ANIMATIONS */
+
+@keyframes orbitMove {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes cardStayUpright {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* DETAILS SECTION */
+
+.skills-section {
+    padding: 95px 8%;
+    background: var(--white);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 55px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 47px);
+    color: var(--forest);
+    line-height: 1.2;
+}
+
+.section-heading p {
+    margin-top: 17px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.skill-card {
+    background: var(--ivory);
+    border: 1px solid rgba(135,149,130,.28);
+    border-radius: 18px;
+    padding: 31px 27px;
+    transition: .35s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--sage);
+    box-shadow: 0 18px 38px rgba(41,59,50,.09);
+}
+
+.skill-number {
+    color: var(--terracotta);
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 21px;
+}
+
+.skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--forest);
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--text);
+}
+
+/* LEARNING SECTION */
+
+.learning-section {
+    padding: 85px 8%;
+    background: var(--light-sage);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.learning-content {
+    max-width: 650px;
+}
+
+.learning-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(31px, 4vw, 43px);
+    line-height: 1.2;
+    color: var(--forest);
+}
+
+.learning-content p {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text);
+}
+
+.learning-symbol {
+    width: 125px;
+    height: 125px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--forest);
+    border: 2px solid var(--champagne);
+    display: grid;
+    place-items: center;
+    color: var(--champagne);
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+}
+
+/* CTA */
+
+.cta {
+    margin: 85px 8%;
+    padding: 65px 30px;
+    text-align: center;
+    background: var(--forest);
+    border-radius: 24px;
+    color: white;
+}
+
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 43px);
+    color: white;
+}
+
+.cta p {
+    color: #D5DED3;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 27px;
+    padding: 14px 26px;
+    background: var(--champagne);
+    color: var(--forest);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.cta a:hover {
+    background: var(--terracotta);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--footer);
+    color: white;
+    padding: 55px 8% 24px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+}
+
+.footer-brand h2 span {
+    color: var(--terracotta);
+}
+
+.footer-brand p {
+    color: #C3CEC2;
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 290px;
+    margin-top: 13px;
+}
+
+.footer-links h4 {
+    color: var(--champagne);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 17px;
+}
+
+.footer-links a {
+    display: block;
+    font-size: 12px;
+    color: #C3CEC2;
+    margin-top: 12px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--champagne);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.13);
+    padding-top: 22px;
+    text-align: center;
+    color: #AAB7AA;
+    font-size: 11px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TABLET */
+
+@media(max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .orbit-stage {
+        transform: scale(.85);
+        margin: -35px 0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    .navbar {
+        padding: 17px 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 81px;
+        left: 0;
+        width: 100%;
+        padding: 25px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+        background: var(--ivory);
+        box-shadow: 0 15px 25px rgba(41,59,50,.09);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 70px 6% 15px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .orbit-label {
+        margin-top: 35px;
+    }
+
+    .orbit-section {
+        padding: 10px 0 45px;
+    }
+
+    .orbit-stage {
+        transform: scale(.62);
+        margin: -105px 0;
+    }
+
+    .skills-section {
+        padding: 75px 6%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-section {
+        padding: 70px 6%;
+    }
+
+    .learning-symbol {
+        width: 95px;
+        height: 95px;
+        font-size: 38px;
+    }
+
+    .cta {
+        margin: 65px 6%;
+        padding: 50px 20px;
+    }
+
+    .footer {
+        padding: 45px 6% 22px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <a href="index.html" class="logo">R<span>.</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="contact-link">Let's Talk ↗</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <p class="eyebrow">MY CREATIVE TOOLKIT</p>
+
+    <h1>Skills That Bring<br>Ideas To <span>Life.</span></h1>
+
+    <p class="hero-description">
+        Every great website begins with an idea and grows through creativity,
+        technology and continuous learning. Explore the technologies I use
+        to create digital experiences.
+    </p>
+
+    <p class="orbit-label">MY TECHNOLOGY UNIVERSE</p>
+</header>
+
+<!-- MOVING ORBIT -->
+
+<section class="orbit-section">
+
+    <div class="orbit-stage">
+
+        <div class="orbit-ring outer"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring inner"></div>
+
+        <div class="orbit-track">
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>HTML5</strong>
+                    <span>STRUCTURE</span>
+                </div>
+            </div>
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>CSS3</strong>
+                    <span>STYLING</span>
+                </div>
+            </div>
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>JavaScript</strong>
+                    <span>INTERACTION</span>
+                </div>
+            </div>
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>Bootstrap</strong>
+                    <span>FRAMEWORK</span>
+                </div>
+            </div>
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>Responsive UI</strong>
+                    <span>ADAPTIVE DESIGN</span>
+                </div>
+            </div>
+
+            <div class="orbit-item">
+                <div class="orbit-card">
+                    <strong>Web Design</strong>
+                    <span>CREATIVITY</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="center-circle">
+            <div class="center-star">✧</div>
+            <h2>FULL STACK<br>DEVELOPER</h2>
+            <p>BUILD · CREATE · GROW</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILL DETAILS -->
+
+<section class="skills-section">
+
+    <div class="section-heading reveal">
+        <p class="eyebrow">BEHIND THE SKILLS</p>
+        <h2>Technology Meets Creativity.</h2>
+        <p>
+            A closer look at the tools and foundations I am exploring
+            as I continue developing my skills in web development.
+        </p>
+    </div>
+
+    <div class="skills-grid">
+
+        <article class="skill-card reveal">
+            <div class="skill-number">01</div>
+            <h3>HTML5</h3>
+            <p>
+                Building meaningful website structures with semantic
+                HTML and well-organized page content.
+            </p>
+        </article>
+
+        <article class="skill-card reveal">
+            <div class="skill-number">02</div>
+            <h3>CSS3</h3>
+            <p>
+                Creating beautiful layouts, styling elements,
+                responsive designs and smooth visual effects.
+            </p>
+        </article>
+
+        <article class="skill-card reveal">
+            <div class="skill-number">03</div>
+            <h3>JavaScript</h3>
+            <p>
+                Exploring interactive website features and adding
+                useful behaviour to modern interfaces.
+            </p>
+        </article>
+
+        <article class="skill-card reveal">
+            <div class="skill-number">04</div>
+            <h3>Bootstrap</h3>
+            <p>
+                Learning to build responsive layouts using
+                Bootstrap's grid system and reusable components.
+            </p>
+        </article>
+
+        <article class="skill-card reveal">
+            <div class="skill-number">05</div>
+            <h3>Responsive Design</h3>
+            <p>
+                Creating layouts that adapt to different screen
+                sizes, from desktops to mobile devices.
+            </p>
+        </article>
+
+        <article class="skill-card reveal">
+            <div class="skill-number">06</div>
+            <h3>Web Design</h3>
+            <p>
+                Exploring visual hierarchy, typography, spacing
+                and colour combinations for better user experiences.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- LEARNING SECTION -->
+
+<section class="learning-section reveal">
+
+    <div class="learning-content">
+        <p class="eyebrow">ALWAYS EVOLVING</p>
+
+        <h2>Learning Today.<br>Building For Tomorrow.</h2>
+
+        <p>
+            Web development is a continuous journey. I enjoy exploring
+            new technologies, improving my problem-solving abilities
+            and turning every learning experience into something practical.
+        </p>
+    </div>
+
+    <div class="learning-symbol">✳</div>
+
+</section>
+
+<!-- CONTACT CTA -->
+
+<section class="cta reveal">
+    <h2>Let's Create Something Meaningful.</h2>
+
+    <p>
+        Have an idea or a project in mind? Let's connect and explore
+        what we can build.
+    </p>
+
+    <a href="contact.html">Get In Touch ↗</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+            <h2>Rubab<span>.</span></h2>
+
+            <p>
+                Exploring creativity and technology to build
+                thoughtful and meaningful digital experiences.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4>EXPLORE</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+        </div>
+
+        <div class="footer-links">
+            <h4>DISCOVER</h4>
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Rubab. Designed with creativity and care.
+    </div>
+
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+
+/* SCROLL REVEAL */
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+</script>
+
+</body>
+</html>

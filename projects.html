@@ -1,0 +1,1450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Rubab Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f4f1e8;
+  --white: #fffdf8;
+  --forest: #19372c;
+  --forest2: #294b3c;
+  --forest3: #10291f;
+  --sage: #879582;
+  --sage-light: #e5e9df;
+  --copper: #ad7757;
+  --gold: #cba675;
+  --ink: #29372f;
+  --muted: #778178;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1160px, 88%);
+  margin: auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  padding: 16px 0;
+  background: rgba(255,253,248,.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(25,55,44,.08);
+  transition: .3s;
+}
+
+.navbar.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 8px 25px rgba(25,55,44,.08);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--forest);
+}
+
+.logo span {
+  color: var(--copper);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #596b60;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--copper);
+}
+
+.nav-links .talk-link {
+  padding: 13px 21px;
+  border-radius: 30px;
+  background: var(--forest);
+  color: white;
+}
+
+.nav-links .talk-link:hover {
+  background: var(--copper);
+  transform: translateY(-3px);
+}
+
+.menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: var(--forest);
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding: 155px 0 105px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(203,166,117,.19), transparent 28%),
+    radial-gradient(circle at 8% 95%, rgba(135,149,130,.17), transparent 30%),
+    var(--cream);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -240px;
+  top: 80px;
+  border: 1px solid rgba(135,149,130,.23);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  left: -160px;
+  bottom: -170px;
+  border: 1px solid rgba(173,119,87,.22);
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr .48fr;
+  align-items: end;
+  gap: 45px;
+}
+
+.kicker {
+  color: var(--copper);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 23px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(43px, 6vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -3.5px;
+  color: var(--forest);
+  margin-bottom: 23px;
+}
+
+.hero h1 span {
+  color: var(--copper);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-description {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.hero-side {
+  padding: 25px;
+  border-left: 2px solid var(--gold);
+  margin-bottom: 10px;
+}
+
+.hero-side strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+
+.hero-side p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* PROJECT SECTION */
+
+.projects-section {
+  padding: 100px 0 110px;
+  background: var(--white);
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.section-heading .kicker {
+  margin-bottom: 13px;
+}
+
+.section-heading h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -1.7px;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  max-width: 560px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.project-count {
+  color: var(--sage);
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  white-space: nowrap;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* PROJECT CARDS */
+
+.project-card {
+  background: var(--white);
+  border: 1px solid rgba(25,55,44,.12);
+  border-radius: 17px;
+  overflow: hidden;
+  transition: .4s ease;
+  box-shadow: 0 8px 25px rgba(25,55,44,.035);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(173,119,87,.45);
+  box-shadow: 0 25px 55px rgba(25,55,44,.12);
+}
+
+.project-preview {
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.preview-coffee {
+  background: linear-gradient(135deg,#382a23,#76503a);
+}
+
+.preview-travel {
+  background: linear-gradient(135deg,#263f42,#78918a);
+}
+
+.preview-portfolio {
+  background: linear-gradient(135deg,#e4dfd1,#b7c2ad);
+}
+
+.preview-design {
+  background: linear-gradient(135deg,#d9c4a5,#a66d52);
+}
+
+/* Decorative project previews */
+
+.browser-window {
+  width: 90%;
+  max-width: 400px;
+  min-height: 190px;
+  background: rgba(255,253,248,.95);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 22px 50px rgba(0,0,0,.2);
+  transition: .45s ease;
+}
+
+.project-card:hover .browser-window {
+  transform: scale(1.045) rotate(-1deg);
+}
+
+.browser-top {
+  height: 23px;
+  padding: 0 10px;
+  background: #ece9df;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.browser-top i {
+  width: 6px;
+  height: 6px;
+  background: #ad7757;
+  border-radius: 50%;
+}
+
+.browser-content {
+  padding: 19px;
+  color: var(--forest);
+}
+
+.browser-label {
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+
+.browser-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.browser-text {
+  font-size: 8px;
+  line-height: 1.7;
+  color: #738076;
+  max-width: 210px;
+}
+
+.preview-coffee .browser-title {
+  color: #68452f;
+}
+
+.preview-travel .browser-title {
+  color: #294b3c;
+}
+
+.preview-portfolio .browser-title {
+  color: #19372c;
+}
+
+.preview-design .browser-title {
+  color: #8d5c41;
+}
+
+.preview-bottom {
+  display: flex;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.preview-bottom span {
+  width: 48px;
+  height: 22px;
+  border-radius: 4px;
+  background: #e5e9df;
+}
+
+.preview-bottom span:first-child {
+  background: #cba675;
+}
+
+.preview-travel .browser-content {
+  background: linear-gradient(130deg,#f4f1e8,#dce6dc);
+}
+
+.preview-coffee .browser-content {
+  background: linear-gradient(130deg,#fff8ec,#eee0cc);
+}
+
+.preview-design .browser-content {
+  background: linear-gradient(130deg,#fff8ec,#f1e3d4);
+}
+
+.project-index {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: rgba(255,255,255,.75);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.preview-portfolio .project-index,
+.preview-design .project-index {
+  color: rgba(25,55,44,.65);
+}
+
+.project-type {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: rgba(255,253,248,.91);
+  color: var(--forest);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+/* PROJECT INFORMATION */
+
+.project-info {
+  padding: 26px 28px 29px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13px;
+  gap: 12px;
+}
+
+.project-category {
+  color: var(--copper);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.project-status {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--sage);
+  background: var(--sage-light);
+  padding: 6px 10px;
+  border-radius: 30px;
+}
+
+.project-info h3 {
+  color: var(--forest);
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 19px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags span {
+  padding: 7px 10px;
+  background: #f1f1e9;
+  border-radius: 5px;
+  color: #657468;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* SMALL BOTTOM STRIP */
+
+.project-bottom {
+  padding: 18px 28px;
+  border-top: 1px solid rgba(25,55,44,.09);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-bottom span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.project-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.project-bottom a:hover {
+  color: var(--copper);
+  gap: 13px;
+}
+
+/* BOTTOM NOTE */
+
+.project-note {
+  margin-top: 50px;
+  padding: 25px 30px;
+  border: 1px solid rgba(135,149,130,.25);
+  border-radius: 12px;
+  background: #f5f5ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.project-note p {
+  color: #68766a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-note strong {
+  color: var(--forest);
+}
+
+.project-note a {
+  flex-shrink: 0;
+  color: var(--copper);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* CTA */
+
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 100px 20px 95px;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(203,166,117,.15),transparent 30%),
+    radial-gradient(circle at 90% 90%,rgba(135,149,130,.18),transparent 32%),
+    linear-gradient(130deg,#19372c,#294b3c);
+}
+
+.final-cta::before,
+.final-cta::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+}
+
+.final-cta::before {
+  width: 350px;
+  height: 350px;
+  top: -260px;
+  left: -100px;
+}
+
+.final-cta::after {
+  width: 420px;
+  height: 420px;
+  bottom: -300px;
+  right: -230px;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: auto;
+}
+
+.cta-kicker {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+}
+
+.cta-content h2 {
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(39px,5.5vw,60px);
+  line-height: 1.22;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.cta-content h2 span {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.cta-content p {
+  max-width: 590px;
+  margin: 0 auto 28px;
+  color: #d4e0d5;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 24px;
+  background: var(--gold);
+  color: var(--forest3);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.cta-button:hover {
+  background: var(--white);
+  transform: translateY(-4px);
+}
+
+/* COMPLETE FOOTER */
+
+footer {
+  background:
+    radial-gradient(circle at 10% 10%,rgba(135,149,130,.12),transparent 35%),
+    linear-gradient(120deg,#10291f,#19372c);
+  color: white;
+  padding: 70px 0 25px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  gap: 50px;
+  padding-bottom: 48px;
+}
+
+.footer-brand {
+  max-width: 330px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.footer-logo span {
+  color: var(--gold);
+}
+
+.footer-brand p {
+  color: #cbd9ce;
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.footer-socials a {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.22);
+  color: #e8e9dc;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.footer-socials a:hover {
+  background: var(--gold);
+  color: var(--forest3);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.footer-column h3 {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  margin: 10px 0 23px;
+}
+
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-column a {
+  color: #d0dbd1;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.footer-column a:hover {
+  color: var(--gold);
+  padding-left: 5px;
+}
+
+.footer-quote {
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding: 25px 0;
+  margin-bottom: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-quote p {
+  color: #e4e9de;
+  font-family: 'Playfair Display',serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.footer-quote span {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: #b9c8bc;
+  font-size: 10px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  transition: .3s;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--gold);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:nth-child(2) {
+  transition-delay: .1s;
+}
+
+.project-card:nth-child(3) {
+  transition-delay: .15s;
+}
+
+.project-card:nth-child(4) {
+  transition-delay: .2s;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr .65fr;
+    gap: 25px;
+  }
+
+  .footer-top {
+    gap: 30px;
+  }
+}
+
+@media(max-width: 700px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 6%;
+    width: 88%;
+    background: var(--white);
+    border-radius: 15px;
+    border: 1px solid rgba(25,55,44,.12);
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 20px 45px rgba(25,55,44,.12);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 13px 8px;
+    font-size: 13px;
+  }
+
+  .nav-links .talk-link {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .hero {
+    padding: 125px 0 75px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+    letter-spacing: -2.5px;
+  }
+
+  .hero-side {
+    max-width: 390px;
+  }
+
+  .projects-section {
+    padding: 75px 0;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
+
+  .project-count {
+    font-size: 32px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .project-preview {
+    min-height: 235px;
+  }
+
+  .project-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .final-cta {
+    padding: 80px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 41px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 25px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-quote {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 400px) {
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .project-info {
+    padding: 22px;
+  }
+
+  .project-preview {
+    min-height: 210px;
+    padding: 15px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .cta-content h2 {
+    font-size: 35px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+
+    <a href="index.html" class="logo">Rubab<span>.</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="talk-link">Let's Talk ↗</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-content">
+
+    <div class="reveal">
+      <div class="kicker">A COLLECTION OF MY WORK</div>
+
+      <h1>
+        Ideas Into
+        <span>Digital Reality.</span>
+      </h1>
+
+      <p class="hero-description">
+        Every project is an opportunity to experiment, learn and create
+        something meaningful. Explore the websites and ideas that reflect
+        my growing journey in web development.
+      </p>
+    </div>
+
+    <div class="hero-side reveal">
+      <strong>Design with purpose.</strong>
+      <p>
+        Thoughtful layouts, useful features and creative details
+        come together to make every digital experience special.
+      </p>
+    </div>
+
+  </div>
+</header>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="container">
+
+    <div class="section-top reveal">
+      <div class="section-heading">
+        <div class="kicker">SELECTED PROJECTS</div>
+        <h2>Things I've Created.</h2>
+        <p>
+          A few projects that represent my creativity, learning
+          and interest in building beautiful digital experiences.
+        </p>
+      </div>
+
+      <div class="project-count">01 — 04</div>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- COFFEE SHOP -->
+      <article class="project-card reveal">
+
+        <div class="project-preview preview-coffee">
+          <div class="project-index">PROJECT / 01</div>
+
+          <div class="browser-window">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+
+            <div class="browser-content">
+              <div class="browser-label">THE COFFEE HOUSE</div>
+              <div class="browser-title">A little cup<br>of happiness.</div>
+              <div class="browser-text">
+                Discover rich flavours, warm moments and a place
+                made for coffee lovers.
+              </div>
+              <div class="preview-bottom">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-type">WEBSITE DESIGN</div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-category">01 / WEB DEVELOPMENT</span>
+            <span class="project-status">Created</span>
+          </div>
+
+          <h3>Coffee Shop Website</h3>
+
+          <p>
+            A stylish coffee shop website featuring warm colours,
+            an inviting landing page, smooth scrolling and interactive
+            visual details.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="project-bottom">
+          <span>Creative Website</span>
+          <a href="contact.html">Discuss Project ↗</a>
+        </div>
+
+      </article>
+
+      <!-- TRIPTIDE -->
+      <article class="project-card reveal">
+
+        <div class="project-preview preview-travel">
+          <div class="project-index">PROJECT / 02</div>
+
+          <div class="browser-window">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+
+            <div class="browser-content">
+              <div class="browser-label">EXPLORE PAKISTAN</div>
+              <div class="browser-title">Find your<br>next escape.</div>
+              <div class="browser-text">
+                Discover breathtaking destinations and plan
+                unforgettable journeys.
+              </div>
+              <div class="preview-bottom">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-type">TRAVEL WEBSITE</div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-category">02 / WEB DEVELOPMENT</span>
+            <span class="project-status">In Progress</span>
+          </div>
+
+          <h3>TripTide — Travel Website</h3>
+
+          <p>
+            A travel website concept inspired by the beautiful
+            Northern Areas of Pakistan, featuring destination
+            exploration and modern layouts.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Bootstrap</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="project-bottom">
+          <span>Travel Experience</span>
+          <a href="contact.html">Discuss Project ↗</a>
+        </div>
+
+      </article>
+
+      <!-- PORTFOLIO -->
+      <article class="project-card reveal">
+
+        <div class="project-preview preview-portfolio">
+          <div class="project-index">PROJECT / 03</div>
+
+          <div class="browser-window">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+
+            <div class="browser-content">
+              <div class="browser-label">PERSONAL PORTFOLIO</div>
+              <div class="browser-title">Hello, I'm<br>a developer.</div>
+              <div class="browser-text">
+                A personal space for showcasing skills,
+                creative work and development projects.
+              </div>
+              <div class="preview-bottom">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-type">PERSONAL BRAND</div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-category">03 / PERSONAL PROJECT</span>
+            <span class="project-status">Created</span>
+          </div>
+
+          <h3>Personal Portfolio</h3>
+
+          <p>
+            A multi-page portfolio designed to present my background,
+            development skills, services and selected work in a
+            consistent visual style.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>UI Design</span>
+          </div>
+        </div>
+
+        <div class="project-bottom">
+          <span>Personal Website</span>
+          <a href="about.html">About Me ↗</a>
+        </div>
+
+      </article>
+
+      <!-- DESIGN EXPERIMENTS -->
+      <article class="project-card reveal">
+
+        <div class="project-preview preview-design">
+          <div class="project-index">PROJECT / 04</div>
+
+          <div class="browser-window">
+            <div class="browser-top">
+              <i></i><i></i><i></i>
+            </div>
+
+            <div class="browser-content">
+              <div class="browser-label">CREATIVE PLAYGROUND</div>
+              <div class="browser-title">Explore.<br>Experiment.</div>
+              <div class="browser-text">
+                A collection of visual experiments, layouts
+                and small creative web concepts.
+              </div>
+              <div class="preview-bottom">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-type">DESIGN CONCEPTS</div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-category">04 / CREATIVE WORK</span>
+            <span class="project-status">Ongoing</span>
+          </div>
+
+          <h3>Design Experiments</h3>
+
+          <p>
+            A growing collection of layout ideas, colour combinations
+            and interface experiments that help me explore different
+            approaches to web design.
+          </p>
+
+          <div class="project-tags">
+            <span>UI Design</span>
+            <span>CSS</span>
+            <span>Animations</span>
+            <span>Creativity</span>
+          </div>
+        </div>
+
+        <div class="project-bottom">
+          <span>Creative Exploration</span>
+          <a href="contact.html">Get In Touch ↗</a>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="project-note reveal">
+      <p>
+        <strong>Always learning, always building.</strong>
+        Each project helps me explore new techniques and improve
+        my approach to design and development.
+      </p>
+      <a href="skills.html">Explore My Skills ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="cta-content reveal">
+
+    <div class="cta-kicker">THE NEXT CHAPTER</div>
+
+    <h2>
+      Have an idea? Let's make it
+      <span>something meaningful.</span>
+    </h2>
+
+    <p>
+      Every meaningful project starts with a conversation.
+      I enjoy exploring creative ideas, learning new things
+      and turning them into thoughtful digital experiences.
+    </p>
+
+    <a href="contact.html" class="cta-button">
+      LET'S CONNECT <span>→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">RUBAB<span>.</span></a>
+
+        <p>
+          Creating with curiosity. Building with purpose.
+          Exploring ideas and turning them into meaningful
+          digital experiences, one project at a time.
+        </p>
+
+        <div class="footer-socials">
+          <!-- Add your real social profile links here -->
+          <a href="contact.html" aria-label="Contact">in</a>
+          <a href="contact.html" aria-label="Email">✉</a>
+          <a href="contact.html" aria-label="Portfolio">↗</a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>EXPLORE</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="skills.html">My Skills</a></li>
+          <li><a href="projects.html">My Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>GET IN TOUCH</h3>
+        <ul>
+          <li><a href="contact.html">Contact Me ↗</a></li>
+          <li><a href="contact.html">Share an Idea</a></li>
+          <li><a href="contact.html">Start a Conversation</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-quote">
+      <p>"Great things are built one idea at a time."</p>
+      <span>CREATIVITY · CURIOSITY · CODE</span>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Rubab. All rights reserved.</p>
+
+      <div class="footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 30);
+  });
+
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    const opened = navLinks.classList.toggle("open");
+    menuBtn.textContent = opened ? "×" : "☰";
+    menuBtn.setAttribute("aria-expanded", opened);
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Scroll reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll(".reveal").forEach(item => {
+    observer.observe(item);
+  });
+</script>
+
+</body>
+</html>
